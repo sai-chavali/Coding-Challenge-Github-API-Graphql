@@ -1,0 +1,17 @@
+<div class="card" style="width: 100%; margin-top: 10px">
+    <div class="card-body" *ngIf="repoData.name">
+            <h4 class="card-subtitle mb-2 text-muted">{{repoData.name}}</h4>
+            <h5 class="card-subtitle mb-2 text-muted">by {{repoData.owner.name||repoData.owner.login}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Description: {{repoData.description}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Stars: {{repoData.stargazers.totalCount}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">url: {{repoData.url}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Languages:</h6>
+            <ul *ngFor="let language of repoData?.languages?.nodes">
+                <li class="card-subtitle mb-2 text-muted"> {{language.name}}</li>
+            </ul>
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Contributors:</h6> -->
+            <!-- <ul *ngIf = "repoData.languages && repoData.languages.nodes" *ngFor="let collaborator of repoData.collaborators.nodes">
+                <li class="card-subtitle mb-2 text-muted" *ngIf="collaborator.name"> {{collaborator.name}}</li>
+            </ul> -->
+    </div>
+</div>

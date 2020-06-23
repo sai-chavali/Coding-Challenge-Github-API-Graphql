@@ -1,0 +1,9 @@
+<div *ngFor="let repo of repos | async">
+    <div class="card" style="width: 100%; margin-top: 10px">
+        <div class="card-body">
+            <a [routerLink]="['/repos']" [queryParams] = "{name:repo.node.name,owner:repo.node.owner.login}" ><h5 class="card-title">{{repo.node.name}}</h5></a>
+            <h6 class="card-subtitle mb-2 text-muted">by {{repo.node.owner.name || repo.node.owner.login}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">link: {{repo.node.url}}</h6>
+        </div>
+    </div>
+</div>
